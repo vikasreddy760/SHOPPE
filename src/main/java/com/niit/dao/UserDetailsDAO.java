@@ -11,7 +11,7 @@ public interface UserDetailsDAO {
 
 	public UserDetails get(int id);
 
-	public void saveOrUpdate(UserDetails user);
+	public boolean saveOrUpdate(UserDetails user);
 
 	public void delete(int id);
 	

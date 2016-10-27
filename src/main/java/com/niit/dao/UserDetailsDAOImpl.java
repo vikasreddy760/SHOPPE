@@ -38,8 +38,11 @@ public class UserDetailsDAOImpl implements UserDetailsDAO {
 	}
 
 	@Transactional
-	public void saveOrUpdate(UserDetails user) {
+	public boolean saveOrUpdate(UserDetails user) {
 		sessionFactory.getCurrentSession().saveOrUpdate(user);
+		user.setEnabled(true);
+		user.setRole("ROLE_USER");
+		return true;
 	
 	}
 	@Transactional
